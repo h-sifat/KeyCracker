@@ -55,6 +55,8 @@ class Timer extends Component {
   };
 
   setMinutes = (minutes) => {
+    if(minutes === 0 || minutes > 10)
+      minutes = 1;
     this.state.value = minutes;
     this.state.seconds = minutes * 60;
     this.state.elapsedSeconds = 0;
@@ -243,7 +245,6 @@ let selectedItem = "";
 let practching = false;
 let keydown = 0;
 let keyPressTime = 0;
-let keyCount = 0;
 let lastStopBtnClick = 0;
 let stopBtnRunning = false;
 let isMuted = false;
@@ -312,6 +313,7 @@ function stopCallback() {
   allVarReset();
   audio.play(3);
   input.disabled = false;
+  elements.timer.setMinutes(1);
   elements.switchBtn.setActiveStatus(false);
 }
 
