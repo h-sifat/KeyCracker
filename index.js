@@ -298,7 +298,6 @@ container.addEventListener("click", (e) => {
       elements.switchBtn.setActiveStatus(true);
       input.disabled = true;
       audio.play(0);
-      input.disabled = false;
     }
   }
 
@@ -312,6 +311,7 @@ container.addEventListener("click", (e) => {
 function stopCallback() {
   allVarReset();
   audio.play(3);
+  input.disabled = false;
   elements.switchBtn.setActiveStatus(false);
 }
 
