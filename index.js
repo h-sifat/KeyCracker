@@ -1,3 +1,4 @@
+{
 class Component {
   state = {
     value: "",
@@ -366,4 +367,5 @@ function listenKeyUp() {
   report.update(keyPressTime);
   elements.ms.setValue("currentValue", keyPressTime > 998 ? 999 : keyPressTime);
   isKeyPressed = false;
+}
 }
