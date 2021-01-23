@@ -103,7 +103,7 @@
         left: 0;
         bottom: 0;
         border-radius: 0.2rem;
-        transition: all ease-in-out 400ms;
+        transition: all ease-in-out 90ms;
         z-index: -1;
       }
 
