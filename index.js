@@ -145,7 +145,7 @@ class MS extends Component {
     DOM.style.setProperty("--msColor", `hsl(${100 - percent}, 100%, 50%)`);
     htmlObj.title = `Your target is: ${value}ms`;
     htmlObj.innerText = currentValue + "ms";
-    setTimeout(this.resetWidth, 400);
+    setTimeout(this.resetWidth, 90);
   }
 }
 
