@@ -1,0 +1,189 @@
+      :root {
+        --msWidth: 0%;
+        --timerWidth: 100%;
+        --msColor: hsl(100, 100%, 50%);
+        --timerColor: hsl(100, 100%, 50%);
+        --msTargetWidth: 50%;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: url(photo.svg);
+        background-position: center center;
+        background-size: cover;
+        font-family: monospace;
+      }
+      .box {
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        background: white;
+        border-radius: 0.2rem;
+        box-shadow: 0 0 20px gray;
+        transition: all ease-out 300ms;
+      }
+
+      .box::selection,
+      .rBox::selection,
+      #timer::selection,
+      #ms::selection {
+        color: black;
+        background: none;
+      }
+
+      p {
+        text-align: center;
+        font-size: large;
+      }
+
+      .header {
+        width: 50vw;
+        justify-self: center;
+      }
+
+      .footer {
+        text-align: center;
+        width: 100%;
+        align-self: end;
+      }
+
+      .main {
+        display: grid;
+        grid-gap: 20px;
+        /* height: 100vh; */
+        grid-template-rows: 1fr auto 1.5fr;
+        justify-content: center;
+      }
+
+      #container {
+        width: 461px;
+        height: 320px;
+        margin: 0 auto;
+        padding: 1rem;
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: 3fr 1.3fr;
+        grid-template-rows: 3fr 3fr;
+      }
+
+      #letter {
+        color: rgb(72, 72, 72);
+        font-size: 250px;
+        grid-row: span 2;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        transition: width ease-out 150ms;
+        transition: height ease-out 150ms;
+      }
+
+      .mini-box {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-rows: 1fr 1fr;
+      }
+
+      #timer,
+      #ms {
+        position: relative;
+        background-color: rgb(0, 0, 0, 0);
+      }
+
+      #timer::before,
+      #ms::before,
+      #ms::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        border-radius: 0.2rem;
+        transition: all ease-in-out 400ms;
+        z-index: -1;
+      }
+
+      #timer::before {
+        width: var(--timerWidth);
+        background-color: var(--timerColor);
+      }
+      #ms::before {
+        width: var(--msWidth);
+        background-color: var(--msColor);
+      }
+
+      #ms::after {
+        width: 3px;
+        left: var(--msTargetWidth);
+        background-color: black;
+        border-radius: 0;
+        z-index: 1;
+      }
+
+      .result {
+        grid-column: span 2;
+        height: 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+        font-size: 31px;
+      }
+
+      .rBox {
+        cursor: pointer;
+        width: 100%;
+        height: 40px;
+        background: white;
+        border-radius: 0.2rem;
+        box-shadow: 0 0 20px gray;
+        text-align: center;
+      }
+
+      #input {
+        display: block;
+        border: none;
+        padding: 10%;
+        font-size: 35px;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      #input:hover {
+        outline: none;
+      }
+
+      #input:focus {
+        background-color: rgb(226, 226, 226);
+        box-shadow: 0 0 20px #fff;
+      }
+
+      #ms,
+      #timer,
+      #switchBtn {
+        font-size: 35px;
+        padding-top: 11px;
+        text-align: center;
+      }
+
+      #letter:hover,
+      #switchBtn:hover,
+      #ms:hover,
+      #timer:hover {
+        background-color: #77cc8b;
+        box-shadow: 0 0 20px #fff;
+      }
+
+      .active {
+        background-color: #45bf62;
+        box-shadow: 0 0 20px #fff;
+      }
+      .clicked {
+        color: black;
+        transform: scale(101%);
+        box-shadow: inset 0 0 30px rgb(39, 62, 31);
+        text-shadow: 0 0 0 2px yellow;
+      }
