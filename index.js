@@ -211,10 +211,10 @@ class Report extends Component {
     const { min, kpc, ave, count } = this.state;
     const childrens = this.state.htmlObj.children;
     childrens[0].innerText = count;
-    childrens[1].innerText = ave;
+    childrens[1].innerText = ave + "ms";
     childrens[1].style.color =
       this.state.ms.getValue("value") > ave ? "green" : "red";
-    childrens[2].innerText = min === Infinity ? 0 : min;
+    childrens[2].innerText = (min === Infinity ? 0 : min) + "ms";
     childrens[3].innerText = kpc;
   }
 }
