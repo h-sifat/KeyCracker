@@ -298,6 +298,7 @@ container.addEventListener("click", (e) => {
       elements.switchBtn.setActiveStatus(true);
       input.disabled = true;
       audio.play(0);
+      input.disabled = false;
     }
   }
 
