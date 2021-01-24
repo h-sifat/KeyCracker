@@ -339,8 +339,8 @@ function takeInput({ keyCode }) {
   }
 
   if (selectedItem === "letter") {
-    const isValid = /^[a-zA-Z]{1}$/.test(inputVal);
-    if (isValid) elements.letter.setValue("value", inputVal);
+//     const isValid = /^[a-zA-Z]{1}$/.test(inputVal);
+   /*if (isValid)*/ elements.letter.setValue("value", inputVal);
     currentLetter = inputVal;
   } else if (selectedItem === "timer") {
     const isValid = /^\d{1}$/.test(inputVal);
