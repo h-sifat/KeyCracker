@@ -313,6 +313,7 @@ function stopCallback() {
   allVarReset();
   audio.play(3);
   input.disabled = false;
+  if(elements.timer.state.seconds === 0)
   elements.timer.setMinutes(1);
   elements.switchBtn.setActiveStatus(false);
 }
